@@ -1,5 +1,9 @@
 // Set params
-let s = {}
+let param = {
+  width: 10,
+  height: 10,
+  count: 400,
+}
 
 // Set global
 let seed
@@ -13,40 +17,38 @@ function setup() {
   createCanvas(window.innerWidth, window.innerHeight)
 
   // Set color
-  s.rectColor = color(237, 0, 62)
-  s.bgColor = color(163, 167, 174)
-
-  // Init rect
-  s.x = 75
-  s.y = 75
-  s.totalWitdh = 450
-  s.height = 150
-  s.count = 100
-  s.randomColors = []
+  param.paramColor = color(237, 0, 62)
+  param.bgColor = color(253, 253, 253)
+  param.randomColors = []
 
   for(let i = 0; i < 10; i++) {
     let x = random(webImage.width)
     let y = random(webImage.height)
     let c = webImage.get(x , y)
-    s.randomColors.push(c)
+    param.randomColors.push(c)
+    console.log('randomColor')
   }
+
+  // Set random color once
+  param.color = param.randomColors[Math.floor(random(param.randomColors.length))]
 
   seed = random(500)
 
   // Set style
-  background(s.bgColor)
+  background(param.bgColor)
 }
 
 function draw() {
-  randomSeed(seed)
-  background(s.bgColor)
+  background(param.bgColor)
   noStroke()
-  let w = s.totalWitdh / s.count
-  for(let i = 0; i < s.count; i++) {
-    let c = s.randomColors[Math.floor(Math.random() * s.randomColors.length)]
-    fill(c)
-    let x = s.x + i * w
-    rect(x, s.y, w, random(s.height))
+  randomSeed(seed)
+
+  for(let i = 0; i < param.count; i++) {
+    
+    let x = random(window.innerWidth)
+    let y = random(window.innerHeight)
+    fill(param.color)
+    rect(x, y, param.width, param.height)
   }
 }
 
