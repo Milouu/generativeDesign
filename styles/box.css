@@ -1,0 +1,78 @@
+/**
+DIMENSIONS 550*350*100 (11*7*2)
+**/
+
+/** 
+Define box variables 
+**/
+.box {
+  --width: 350px;
+  --height: 550px;
+  --depth: 100px;
+
+  animation: rotateBox 4s infinite linear;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+/**
+FACES
+**/
+.box__face {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(238, 238, 238, 0.904);
+}
+
+.box__front, .box__back {
+  width: var(--width);
+  height: var(--height);
+}
+
+.box__left, .box__right {
+  width: var(--depth);
+  height: var(--height);
+}
+
+.box__bottom, .box__top {
+  width: var(--width);
+  height: var(--depth);
+}
+
+/**
+FACES TRANSFORM
+**/
+.box__left {
+  transform: translate(calc(-1 * var(--width) / 2 - var(--depth) / 2), -50%) rotateY(90deg);
+}
+
+.box__right {
+  transform: translate(calc(var(--width) / 2 - var(--depth) / 2), -50%) rotateY(90deg);
+}
+
+.box__front {
+  transform: translate3D(-50%, -50%, calc(var(--depth) / 2));
+}
+
+.box__back {
+  transform: translate3D(-50%, -50%, calc(-1 * var(--depth) / 2));
+}
+
+.box__bottom {
+  transform: translate(-50%, calc(var(--height) / 2 - var(--depth) / 2)) rotateX(90deg);
+}
+
+.box__top {
+  transform: translate(-50%, calc(-1 * var(--height) / 2 - var(--depth) / 2)) rotateX(90deg);
+}
+
+@keyframes rotateBox {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
