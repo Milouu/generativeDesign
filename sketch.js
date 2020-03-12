@@ -1,8 +1,8 @@
 // Set params
 let param = {
-  width: 100,
-  height: 100,
-  count: 400,
+  width: window.innerWidth,
+  height: 400,
+  count: 1
 }
 
 // Set global
@@ -14,7 +14,7 @@ function preload() {
 
 function setup() {
   // Init canvas
-  createCanvas(window.innerWidth, window.innerHeight)
+  createCanvas(param.width, param.height)
 
   param.ingredients = ['lorem', 'ipsum', 'dolor', 'test', 'sah']
   param.patterns = []
@@ -49,27 +49,42 @@ function setup() {
 }
 
 function draw() {
-  background(param.bgColor)
-  // noStroke()
-  strokeWeight(4)
+  // background(param.bgColor)
+  background(param.patterns[2].color)
+
+  // Stroke or not on patterns
+  noStroke()
+  // strokeWeight(4)
   randomSeed(seed)
 
-  for(let i = 0; i < param.count; i++) {
-    for(let j = 0; j < param.ingredients.length; j++) {
-      let x = random(window.innerWidth)
-      let y = random(window.innerHeight)
-      // fill(param.patterns[j].color)
-      stroke(param.patterns[j].color)
-      
-      rotate(PI / random(3))
-      // rect(x, y, param.width, param.height)
-      let width = random(param.width)
-      beginShape(TRIANGLES)
-      vertex(x, y)
-      vertex(x + width/2, y + random(param.height))
+  let x = 0
+  let y = -(param.height/2)
+  for(let i = 0; i < param.ingredients.length ; i++) {
+    let width = (window.innerWidth / param.ingredients.length) * (1.5 + random(1))
+    let height = param.height * (2 + random(1))
+    x -= width/6
+
+    fill(param.patterns[i].color)
+    
+    // rect(x, y, param.width, param.height)
+    // let width = random(param.width + 100)
+    beginShape(TRIANGLES)
+    vertex(x, y)
+    if(y > 0) {
+      vertex(x + width/2, y - height)
       vertex(x + width, y)
-      endShape()
+      y = -(param.height/2)
+    } else {
+      vertex(x + width/2, y + height)
+      vertex(x + width, y)
+      y = param.height * 1.5
     }
+    endShape()
+
+    // Rotation on patterns 
+    rotate(PI / ((100))*random([-1, 1]))
+
+    x += width / 1.5
   }
 }
 
