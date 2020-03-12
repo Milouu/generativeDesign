@@ -6,11 +6,12 @@ DIMENSIONS 550*350*100 (11*7*2)
 Define box variables 
 **/
 .box {
-  --width: 350px;
-  --height: 550px;
-  --depth: 100px;
+  --width: 260px;
+  --height: 380px;
+  --depth: 140px;
+  --topHeight: 120px;
 
-  animation: rotateBox 4s infinite linear;
+  animation: rotateBox 4s infinite alternate;
   position: relative;
   transform-style: preserve-3d;
 }
@@ -23,7 +24,7 @@ FACES
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(238, 238, 238, 0.904);
+  background-color: #FFFFFF;
 }
 
 .box__front, .box__back {
@@ -41,6 +42,25 @@ FACES
   height: var(--depth);
 }
 
+.box__topFront, .box__topBack {
+  width: var(--width);
+  height: var(--depth);
+  background-color: red;
+}
+
+.box__topLeft, .box__topRight {
+  width: var(--depth);
+  height: var(--depth);
+  background-color: transparent;
+  /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
+  width: 0; 
+  height: 0; 
+  border-left: calc(var(--depth) / 2) solid transparent;
+  border-right: calc(var(--depth) / 2) solid transparent;
+  
+  border-bottom: var(--depth) solid black;
+}
+
 /**
 FACES TRANSFORM
 **/
@@ -54,6 +74,8 @@ FACES TRANSFORM
 
 .box__front {
   transform: translate3D(-50%, -50%, calc(var(--depth) / 2));
+  background-image: url(../assets/images/cereal.png);
+  background-size: contain;
 }
 
 .box__back {
@@ -68,11 +90,31 @@ FACES TRANSFORM
   transform: translate(-50%, calc(-1 * var(--height) / 2 - var(--depth) / 2)) rotateX(90deg);
 }
 
+.box__topFront {
+  transform: translate3D(-50%, calc(-1 * var(--height) / 2 - var(--depth)), calc(var(--depth) / 2)) rotateX(30deg);
+  transform-origin: bottom;
+}
+
+.box__topBack {
+  transform: translate3D(-50%, calc(-1 * var(--height) / 2 - var(--depth)), calc(-1 * var(--depth) / 2)) rotateX(-30deg);
+  transform-origin: bottom;
+}
+
+.box__topLeft {
+  transform-origin: bottom;
+  transform: translate(calc(-1 * var(--width) / 2 - var(--depth) / 2), calc(-1 * var(--height) / 2 - var(--depth))) rotateY(90deg) rotateX(-31deg);
+}
+
+.box__topRight {
+  transform-origin: bottom;
+  transform: translate(calc(var(--width) / 2 - var(--depth) / 2), calc(-1 * var(--height) / 2 - var(--depth))) rotateY(90deg) rotateX(31deg);
+}
+
 @keyframes rotateBox {
   from {
-    transform: rotateX(0deg) rotateY(0deg);
+    transform: rotateX(0deg) rotateY(-160deg);
   }
   to {
-    transform: rotateX(360deg) rotateY(360deg);
+    transform: rotateX(0deg) rotateY(40deg);
   }
 }
