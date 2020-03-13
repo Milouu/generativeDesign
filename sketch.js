@@ -1,7 +1,7 @@
 // Set params
 let param = {
-  width: window.innerWidth,
-  height: 400,
+  width: 260,
+  height: 140,
   count: 1
 }
 
@@ -9,12 +9,13 @@ let param = {
 let seed
 
 function preload() {
-  webImage = loadImage('./assets/images/all_berries.jpg')
+  webImage = loadImage('./assets/images/chocolate_cereal.jpg')
 }
 
 function setup() {
   // Init canvas
-  createCanvas(param.width, param.height)
+  const canvas = createCanvas(param.width, param.height)
+  canvas.parent('canvasTarget')
 
   param.ingredients = ['lorem', 'ipsum', 'dolor', 'test', 'sah']
   param.patterns = []
@@ -60,7 +61,7 @@ function draw() {
   let x = 0
   let y = -(param.height/2)
   for(let i = 0; i < param.ingredients.length ; i++) {
-    let width = (window.innerWidth / param.ingredients.length) * (1.5 + random(1))
+    let width = (param.width / param.ingredients.length) * (1.5 + random(1))
     let height = param.height * (2 + random(1))
     x -= width/6
 

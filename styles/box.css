@@ -112,9 +112,16 @@ FACES TRANSFORM
 
 @keyframes rotateBox {
   from {
-    transform: rotateX(0deg) rotateY(-160deg);
+    transform: rotateX(0deg) rotateY(-40deg);
   }
   to {
     transform: rotateX(0deg) rotateY(40deg);
   }
+}
+
+/** 
+  CANVAS
+**/
+#defaultCanvas0 {
+  top: 0px;
 }
