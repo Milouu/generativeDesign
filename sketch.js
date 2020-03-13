@@ -42,7 +42,6 @@ function setup() {
   
   for(let i = 0; i < param.ingredients.length + 1; i++) {
     let image = eval(product.slug + '_image')
-    console.log(product.slug)
     let x = random(image.width)
     let y = random(image.height)
     let color = image.get(x , y)
