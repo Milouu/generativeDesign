@@ -20,7 +20,7 @@ Define box variables
 
 .box:hover {
   cursor: pointer;
-  transform: translateY(50px) rotateY(-40deg) scale(1.05);
+  transform: translateY(50px) rotateY(-35deg) scale(1.05);
 }
 
 .box:hover .box__face:not(.box__topRight):not(.box__topLeft) {
