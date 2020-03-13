@@ -12,9 +12,19 @@ Define box variables
   --topHeight: 120px;
 
   /* animation: rotateBox 4s infinite alternate; */
-  transform: rotateY(-40deg);
+  transform: translateY(50px) rotateY(-40deg);
+  transition: transform 1s ease;
   position: relative;
   transform-style: preserve-3d;
+}
+
+.box:hover {
+  cursor: pointer;
+  transform: translateY(50px) rotateY(-40deg) scale(1.05);
+}
+
+.box:hover .box__face:not(.box__topRight):not(.box__topLeft) {
+  outline: 1px solid black;
 }
 
 /**
