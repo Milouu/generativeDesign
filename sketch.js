@@ -108,8 +108,6 @@ let sketch2 = function(p) {
     p.param.paramColor = p.color(237, 0, 62)
     p.param.bgColor = p.color(253, 253, 253)
 
-    
-
     for(let i = 0; i < p.param.ingredients.length + 1; i++) {
       let x = p.random(p.webImage.width)
       let y = p.random(p.webImage.height)
@@ -169,6 +167,11 @@ let sketch2 = function(p) {
 
 let space1 = new p5(sketch)
 let space2 = new p5(sketch2)
+
+setInterval(() => {
+  space1.setup()
+  space1.draw()
+}, 2000);
 
 // // Set params
 // let param = {
