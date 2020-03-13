@@ -1,7 +1,7 @@
 function getProduct() {
   product = JSON.parse(sessionStorage.product)
   setup()
-  draw()
+  redraw()
 }
 
 // Set params
@@ -15,33 +15,34 @@ let param = {
 let seed
 
 function preload() {
-  param.image = './assets/images/'+ product.slug +'.jpg'
-  webImage = loadImage(param.image)
+  chocolate_cereals_image = loadImage('./assets/images/chocolate_cereals.jpg')
+  fruit_cereals_image = loadImage('./assets/images/fruit_cereals.jpg')
+  corn_cereals_image = loadImage('./assets/images/corn_cereals.jpg')
 }
 
 function setup() {
   // Init canvas
   const canvas = createCanvas(param.width, param.height)
   canvas.parent('canvasTarget')
-
-  // Init product
-  // let image = './assets/images/'+ product.slug +'.jpg'
-  let ingredients = product.ingredients
-
-  document.querySelector('.box').addEventListener('click', getProduct, true)
   
-
+  // Init product
+  let ingredients = product.ingredients
+  
   param.ingredients = ingredients
   param.patterns = []
-
+  
   // Set color
   param.bgColor = color(253, 253, 253)
-
+  
+  // Listener
+  document.querySelector('.box').addEventListener('click', getProduct, true)
   
   for(let i = 0; i < param.ingredients.length + 1; i++) {
-    let x = random(webImage.width)
-    let y = random(webImage.height)
-    let color = webImage.get(x , y)
+    let image = eval(product.slug + '_image')
+    console.log(image)
+    let x = random(image.width)
+    let y = random(image.height)
+    let color = image.get(x , y)
 
     if(i === param.ingredients.length) {
       param.bgColor = color
@@ -100,31 +101,8 @@ function draw() {
   }
 }
 
-// let drawPattern = function() {
-//   draw()
-// }
-
-// let updatePattern = function() {
-//   image = './assets/images/'+ products[box.index].slug +'.jpg'
-//   ingredients = products[box.index].ingredients
-//   drawPattern()
-// }
-
-// drawPattern()
-
-// document.querySelector('.box').addEventListener('click', () => { updatePattern() })
-
-
-
-
-// function keyTyped() {
-//   if(key === 's') {
-//     saveCanvas('cours-hetic', 'jpg')
-//   }
-//   if(key === 'r') {
-//     document.location.reload(true)
-//   }
-//   if(key === 'n') {
-//     seed = random(500)
-//   }
-// }
+function keyTyped() {
+  if(key === 'r') {
+    document.location.reload(true)
+  }
+}
