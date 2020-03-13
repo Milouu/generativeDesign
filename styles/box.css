@@ -12,7 +12,7 @@ Define box variables
   --topHeight: 120px;
 
   /* animation: rotateBox 4s infinite alternate; */
-  transform: translateY(50px) rotateY(-40deg);
+  transform: translateY(40px) rotateY(-40deg);
   transition: transform 1s ease;
   position: relative;
   transform-style: preserve-3d;

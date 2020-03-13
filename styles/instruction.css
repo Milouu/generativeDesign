@@ -1,0 +1,9 @@
+.instruction {
+  position: absolute;
+  bottom: 20px;
+  font-family: Gordita;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--black);
+  opacity: .6;
+}
