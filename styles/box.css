@@ -11,9 +11,20 @@ Define box variables
   --depth: 140px;
   --topHeight: 120px;
 
-  animation: rotateBox 4s infinite alternate;
+  /* animation: rotateBox 4s infinite alternate; */
+  transform: translateY(40px) rotateY(-40deg);
+  transition: transform 1s ease;
   position: relative;
   transform-style: preserve-3d;
+}
+
+.box:hover {
+  cursor: pointer;
+  transform: translateY(50px) rotateY(-35deg) scale(1.05);
+}
+
+.box:hover .box__face:not(.box__topRight):not(.box__topLeft) {
+  outline: 1px solid black;
 }
 
 /**
@@ -45,20 +56,19 @@ FACES
 .box__topFront, .box__topBack {
   width: var(--width);
   height: var(--depth);
-  background-color: red;
+  background-color: #F2F2F2;
 }
 
 .box__topLeft, .box__topRight {
   width: var(--depth);
   height: var(--depth);
   background-color: transparent;
-  /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
   width: 0; 
   height: 0; 
   border-left: calc(var(--depth) / 2) solid transparent;
   border-right: calc(var(--depth) / 2) solid transparent;
   
-  border-bottom: var(--depth) solid black;
+  border-bottom: var(--depth) solid #F8F8F8;
 }
 
 /**
@@ -74,7 +84,6 @@ FACES TRANSFORM
 
 .box__front {
   transform: translate3D(-50%, -50%, calc(var(--depth) / 2));
-  background-image: url(../assets/images/cereal.png);
   background-size: contain;
 }
 
@@ -110,6 +119,19 @@ FACES TRANSFORM
   transform: translate(calc(var(--width) / 2 - var(--depth) / 2), calc(-1 * var(--height) / 2 - var(--depth))) rotateY(90deg) rotateX(31deg);
 }
 
+/**
+HEADER & FOOTER
+**/
+
+.box__header, .box__footer {
+  padding: 20px;
+}
+.box__footer {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+}
+
 @keyframes rotateBox {
   from {
     transform: rotateX(0deg) rotateY(-40deg);
@@ -120,7 +142,7 @@ FACES TRANSFORM
 }
 
 /** 
-  CANVAS
+CANVAS
 **/
 #defaultCanvas0 {
   top: 0px;

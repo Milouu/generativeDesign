@@ -1,0 +1,22 @@
+
+.box__front {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.box__title {
+  font-family: Gordita;
+  font-weight: 400;
+  font-size: 30px;
+  color: var(--black);
+}
+.box__logo {
+  font-family: Gordita;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--black);
+  text-transform: uppercase;
+  transform-origin: bottom right;
+  transform: translateX(-100%) rotate(90deg);
+  display: inline-block;
+}

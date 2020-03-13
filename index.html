@@ -7,16 +7,63 @@
     <script src="data.js"></script>
     <script src="sketch.js"></script>
     <style>body {padding: 0; margin: 0; background-color: #FFFAEA; height:100vh;} #defaultCanvas0 {margin: 0 auto; position:relative; top: 30px; display: block !important;}</style>
+    <link rel="stylesheet" type="text/css" href="styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="styles/fonts.css">
+    <link rel="stylesheet" type="text/css" href="styles/colors.css">
     <link rel="stylesheet" type="text/css" href="styles/layout.css">
     <link rel="stylesheet" type="text/css" href="styles/box.css">
+    <link rel="stylesheet" type="text/css" href="styles/boxFront.css">
+    <link rel="stylesheet" type="text/css" href="styles/boxRight.css">
+    <link rel="stylesheet" type="text/css" href="styles/ingredients.css">
+    <link rel="stylesheet" type="text/css" href="styles/charts.css">
+    <link rel="stylesheet" type="text/css" href="styles/instruction.css">
 </head>
 <body>
     <section class="wrapper">
         <div class="box">
-            <div class="box__face box__front"></div>
+            <div class="box__face box__front">
+                <header class="box__header">
+                    <h1 class="box__title"></h1>
+                </header>
+                <footer class="box__footer">
+                    <div class="box__logo">Céres</div>
+                </footer>
+            </div>
             <div class="box__face box__left"></div>
             <div class="box__face box__back"></div>
-            <div class="box__face box__right"></div>
+            <div class="box__face box__right">
+                <header class="box__header">
+                    <div class="ingredients"><strong>Ingredients:</strong> <span class="ingredients__text"></span></div>
+                </header>
+                <footer class="box__footer">
+                    <ul class="charts">
+                        <!-- <li class="chart">
+                            <div class="chart__head">
+                                <img src="assets/images/chartHead.svg" alt="">
+                            </div>
+                            <div class="chart__body">
+                                <div class="chart__label">Blé <span class="chart__value">27%</span></div>
+                            </div>
+                        </li>
+                        <li class="chart">
+                            <div class="chart__head">
+                                <img src="assets/images/chartHead.svg" alt="">
+                            </div>
+                            <div class="chart__body">
+                                <div class="chart__label">Blé <span class="chart__value">27%</span></div>
+                            </div>
+                        </li>
+                        <li class="chart">
+                            <div class="chart__head">
+                                <img src="assets/images/chartHead.svg" alt="">
+                            </div>
+                            <div class="chart__body">
+                                <div class="chart__label">Blé <span class="chart__value">27%</span></div>
+                            </div>
+                        </li> -->
+                    </ul>
+                </footer>
+            </div>
             <div class="box__face box__bottom"></div>
             <div class="box__face box__top"></div>
             <div id="canvasTarget" class="box__face box__topFront"></div>
@@ -24,6 +71,8 @@
             <div class="box__face box__topLeft"></div>
             <div class="box__face box__topRight"></div>
         </div>
+        <div class="instruction">Click on box to generate another one</div>
     </section>
+    <script src="main.js" type="module"></script>
 </body>
 </html>
