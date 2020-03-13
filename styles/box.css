@@ -16,6 +16,7 @@ Define box variables
   transition: transform 1s ease;
   position: relative;
   transform-style: preserve-3d;
+  user-select: none;
 }
 
 .box:hover {

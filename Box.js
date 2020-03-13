@@ -13,7 +13,6 @@ export default class Box {
   }
 
   generateBox(products) {
-  
     sessionStorage.setItem('product', products[this.index])
     
     // init Ingredients & charts
