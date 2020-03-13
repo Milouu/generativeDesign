@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="styles/box.css">
     <link rel="stylesheet" type="text/css" href="styles/boxFront.css">
     <link rel="stylesheet" type="text/css" href="styles/boxRight.css">
+    <link rel="stylesheet" type="text/css" href="styles/ingredients.css">
     <link rel="stylesheet" type="text/css" href="styles/charts.css">
 </head>
 <body>
@@ -20,7 +21,7 @@
         <div class="box">
             <div class="box__face box__front">
                 <header class="box__header">
-                    <h1 class="box__title">Chocolate cereal</h1>
+                    <h1 class="box__title"></h1>
                 </header>
                 <footer class="box__footer">
                     <div class="box__logo">Céres</div>
@@ -30,11 +31,11 @@
             <div class="box__face box__back"></div>
             <div class="box__face box__right">
                 <header class="box__header">
-                    <div class="ingredients"><strong>Ingredients:</strong> Blé 20%, avoine 33%, Sucre 12%, Miel 12%.</div>
+                    <div class="ingredients"><strong>Ingredients:</strong> <span class="ingredients__text"></span></div>
                 </header>
                 <footer class="box__footer">
                     <ul class="charts">
-                        <li class="chart">
+                        <!-- <li class="chart">
                             <div class="chart__head">
                                 <img src="assets/images/chartHead.svg" alt="">
                             </div>
@@ -57,7 +58,7 @@
                             <div class="chart__body">
                                 <div class="chart__label">Blé <span class="chart__value">27%</span></div>
                             </div>
-                        </li>
+                        </li> -->
                     </ul>
                 </footer>
             </div>
@@ -69,5 +70,6 @@
             <div class="box__face box__topRight"></div>
         </div>
     </section>
+    <script src="main.js" type="module"></script>
 </body>
 </html>
