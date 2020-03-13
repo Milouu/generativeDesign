@@ -31,6 +31,9 @@ let sketch = function(p) {
 
       if(i === p.param.ingredients.length) {
         p.param.bgColor = color
+        let hexColor = '#' + p.hex(color[0], 2) + p.hex(color[1], 2) + p.hex(color[2], 2)
+        document.querySelector('.box__topLeft').style.borderBottomColor = hexColor
+        document.querySelector('.box__topRight').style.borderBottomColor = hexColor
       }
       else {
         const pattern = {}
