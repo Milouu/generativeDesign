@@ -1,4 +1,7 @@
 import Box from './Box.js'
+import { products } from './data.js'
+
+console.log('data', products)
 
 // To import from data.js
 const productIngredients = [
@@ -17,4 +20,5 @@ const productIngredients = [
 ]
 
 // init Box
-const box = new Box(productIngredients)
+const box = new Box(products)
+// box.generateBox(products[0].ingredients)

@@ -8,10 +8,17 @@ export default class Charts {
     this.$values = this.$container.querySelectorAll('.value')
   }
 
+  clearCharts() {
+    this.$container.innerHTML = ''
+  }
+
   craftCharts(ingredients) {
-    console.log(ingredients)
+    
     // Params
     const height = this.$container.offsetHeight
+
+    // Clear
+    this.clearCharts()
     
     for(const [i, $chart] of ingredients.entries()) {
 
