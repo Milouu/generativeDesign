@@ -56,7 +56,7 @@ FACES
 .box__topFront, .box__topBack {
   width: var(--width);
   height: var(--depth);
-  background-color: red;
+  background-color: #F2F2F2;
 }
 
 .box__topLeft, .box__topRight {
@@ -68,7 +68,7 @@ FACES
   border-left: calc(var(--depth) / 2) solid transparent;
   border-right: calc(var(--depth) / 2) solid transparent;
   
-  border-bottom: var(--depth) solid black;
+  border-bottom: var(--depth) solid #F8F8F8;
 }
 
 /**
