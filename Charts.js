@@ -14,11 +14,11 @@ export default class Charts {
 
   craftCharts(ingredients) {
     
-    // Params
-    const height = this.$container.offsetHeight
-
     // Clear
     this.clearCharts()
+
+    // Params
+    const height = this.$container.offsetHeight
     
     for(const [i, $chart] of ingredients.entries()) {
 

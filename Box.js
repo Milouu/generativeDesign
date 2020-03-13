@@ -14,13 +14,13 @@ export default class Box {
 
   generateBox(products) {
     const index = Math.floor(Math.random() * products.length)
-    console.log(index)
+    
     // init Ingredients & charts
     const texts = new Ingredients()
     const charts = new Charts()
 
     // Craft ingredients then charts
-    texts.craftTitle('Chocolate cereal')
+    texts.craftTitle(products[index].name)
     texts.craftIngredients(products[index].ingredients)
     charts.craftCharts(products[index].ingredients)
   }

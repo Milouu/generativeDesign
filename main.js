@@ -21,4 +21,4 @@ const productIngredients = [
 
 // init Box
 const box = new Box(products)
-// box.generateBox(products[0].ingredients)
+box.generateBox(products)
