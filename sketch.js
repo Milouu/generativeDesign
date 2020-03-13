@@ -168,11 +168,6 @@ let sketch2 = function(p) {
 let space1 = new p5(sketch)
 let space2 = new p5(sketch2)
 
-setInterval(() => {
-  space1.setup()
-  space1.draw()
-}, 2000);
-
 // // Set params
 // let param = {
 //   width: 260,
