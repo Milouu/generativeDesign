@@ -4,9 +4,6 @@
   flex-direction: column;
   justify-content: space-between;
 }
-.box__header, .box__footer {
-  padding: 20px;
-}
 .box__title {
   font-family: Gordita;
   font-weight: 400;

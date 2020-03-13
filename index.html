@@ -12,6 +12,8 @@
     <link rel="stylesheet" type="text/css" href="styles/layout.css">
     <link rel="stylesheet" type="text/css" href="styles/box.css">
     <link rel="stylesheet" type="text/css" href="styles/boxFront.css">
+    <link rel="stylesheet" type="text/css" href="styles/boxRight.css">
+    <link rel="stylesheet" type="text/css" href="styles/charts.css">
 </head>
 <body>
     <section class="wrapper">
@@ -26,7 +28,39 @@
             </div>
             <div class="box__face box__left"></div>
             <div class="box__face box__back"></div>
-            <div class="box__face box__right"></div>
+            <div class="box__face box__right">
+                <header class="box__header">
+                    <div class="ingredients"><strong>Ingredients:</strong> Blé 20%, avoine 33%, Sucre 12%, Miel 12%.</div>
+                </header>
+                <footer class="box__footer">
+                    <ul class="charts">
+                        <li class="chart">
+                            <div class="chart__head">
+                                <img src="assets/images/chartHead.svg" alt="">
+                            </div>
+                            <div class="chart__body">
+                                <div class="chart__label">Blé <span class="chart__value">27%</span></div>
+                            </div>
+                        </li>
+                        <li class="chart">
+                            <div class="chart__head">
+                                <img src="assets/images/chartHead.svg" alt="">
+                            </div>
+                            <div class="chart__body">
+                                <div class="chart__label">Blé <span class="chart__value">27%</span></div>
+                            </div>
+                        </li>
+                        <li class="chart">
+                            <div class="chart__head">
+                                <img src="assets/images/chartHead.svg" alt="">
+                            </div>
+                            <div class="chart__body">
+                                <div class="chart__label">Blé <span class="chart__value">27%</span></div>
+                            </div>
+                        </li>
+                    </ul>
+                </footer>
+            </div>
             <div class="box__face box__bottom"></div>
             <div class="box__face box__top"></div>
             <div id="canvasTarget" class="box__face box__topFront"></div>

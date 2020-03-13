@@ -109,6 +109,19 @@ FACES TRANSFORM
   transform: translate(calc(var(--width) / 2 - var(--depth) / 2), calc(-1 * var(--height) / 2 - var(--depth))) rotateY(90deg) rotateX(31deg);
 }
 
+/**
+HEADER & FOOTER
+**/
+
+.box__header, .box__footer {
+  padding: 20px;
+}
+.box__footer {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+}
+
 @keyframes rotateBox {
   from {
     transform: rotateX(0deg) rotateY(-40deg);
@@ -119,7 +132,7 @@ FACES TRANSFORM
 }
 
 /** 
-  CANVAS
+CANVAS
 **/
 #defaultCanvas0 {
   top: 0px;

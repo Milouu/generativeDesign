@@ -1,0 +1,8 @@
+.box__right .box__footer {
+  padding-bottom: 0;
+}
+.box__right {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+}
