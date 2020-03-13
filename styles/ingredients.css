@@ -1,0 +1,13 @@
+.ingredients {
+  padding: 5px;
+  background-color: var(--black);
+  color: white;
+  font-family: Gordita;
+  font-size: 6px;
+  line-height: 8px;
+  font-weight: 300;
+}
+
+.ingredients strong {
+  font-weight: 500;
+}
