@@ -35,7 +35,7 @@ FACES
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: #FFFFFF;
+  background-color: #F2F2F2;
 }
 
 .box__front, .box__back {
@@ -56,7 +56,6 @@ FACES
 .box__topFront, .box__topBack {
   width: var(--width);
   height: var(--depth);
-  background-color: #F2F2F2;
 }
 
 .box__topLeft, .box__topRight {
