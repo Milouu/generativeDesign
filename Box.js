@@ -5,7 +5,6 @@ export default class Box {
   constructor(products) {
     this.box = document.querySelector('.box')
     this.index = 0
-
     this.listeners(products)
   }
 
@@ -14,6 +13,8 @@ export default class Box {
   }
 
   generateBox(products) {
+    sessionStorage.setItem('product', products[this.index])
+    
     // init Ingredients & charts
     const texts = new Ingredients()
     const charts = new Charts()
@@ -22,7 +23,6 @@ export default class Box {
     texts.craftTitle(products[this.index].name)
     texts.craftIngredients(products[this.index].ingredients)
     charts.craftCharts(products[this.index].ingredients)
-    
     this.index === products.length - 1 ? this.index = 0 : this.index++
   }
 }
