@@ -13,7 +13,7 @@ export default class Box {
   }
 
   generateBox(products) {
-    sessionStorage.setItem('product', products[this.index])
+    sessionStorage.setItem('product', JSON.stringify(products[this.index]))
     
     // init Ingredients & charts
     const texts = new Ingredients()
