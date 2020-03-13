@@ -11,7 +11,8 @@ Define box variables
   --depth: 140px;
   --topHeight: 120px;
 
-  animation: rotateBox 4s infinite alternate;
+  /* animation: rotateBox 4s infinite alternate; */
+  transform: rotateY(-40deg);
   position: relative;
   transform-style: preserve-3d;
 }
@@ -52,7 +53,6 @@ FACES
   width: var(--depth);
   height: var(--depth);
   background-color: transparent;
-  /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
   width: 0; 
   height: 0; 
   border-left: calc(var(--depth) / 2) solid transparent;
@@ -74,7 +74,6 @@ FACES TRANSFORM
 
 .box__front {
   transform: translate3D(-50%, -50%, calc(var(--depth) / 2));
-  background-image: url(../assets/images/cereal.png);
   background-size: contain;
 }
 
